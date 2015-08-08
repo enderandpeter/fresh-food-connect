@@ -12,6 +12,7 @@ export default class Counter extends Component {
     const { increment, incrementIfOdd, decrement, counter } = this.props;
     return (
       <p>
+      Hello World
         Clicked: {counter} times
         {' '}
         <button onClick={increment}>+</button>
