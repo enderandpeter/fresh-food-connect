@@ -4,8 +4,8 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import * as stores from './stores';
 import App from './containers/App';
-import CounterApp from './containers/CounterApp';
-import UserLoginApp from './containers/UserLoginApp';
+import Counter from './components/Counter';
+import UserLogin from './components/UserLogin';
 
 const reducer = combineReducers(stores);
 const store = createStore(reducer);
@@ -20,19 +20,15 @@ export default class Root extends Component {
         const { history } = this.props;
         return (
             <Provider store={store}>
-                {renderRoutes.bind(null, history)}
+                {() =>
+                    <Router history={history}>
+                        <Route component={App}>
+                            <Route path="/" component={UserLogin}/>
+                            <Route path="/profile" component={Counter}/>
+                        </Route>
+                    </Router>
+                }
             </Provider>
         );
     }
-}
-
-function renderRoutes(history) {
-    return (
-        <Router history={history}>
-            <Route component={App} path='/'>
-                <Route path="profile" component={CounterApp}/>
-                <Route path="login" component={UserLoginApp}/>
-            </Route>
-        </Router>
-    );
 }

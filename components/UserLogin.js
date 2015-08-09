@@ -18,7 +18,6 @@ export default class UserLogin extends Component {
     }
 
     render() {
-        //const { increment, incrementIfOdd, decrement, counter } = this.props;
         return (
             <p>
                 <AppBar

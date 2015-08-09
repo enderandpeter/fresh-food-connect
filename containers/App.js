@@ -1,16 +1,19 @@
 import React, { PropTypes } from 'react';
-import UserLoginApp from './UserLoginApp';
 import { Link } from 'react-router';
 export default class App {
+
+    static propTypes = {
+        children: PropTypes.object.isRequired
+    };
+
     render() {
-        console.log(this.props.children);
         return (
             <div>
                 <h1>App</h1>
                 {/* change the <a>s to <Links>s */}
                 <ul>
-                    <li><Link to="/profile">About</Link></li>
-                    <li><Link to="/login">login</Link></li>
+                    <li><Link to="/profile">profile</Link></li>
+                    <li><Link to="/">login</Link></li>
                 </ul>
 
                 {/*
