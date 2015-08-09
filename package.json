@@ -27,9 +27,12 @@
   },
   "homepage": "https://github.com/gaearon/redux#readme",
   "dependencies": {
+    "invariant": "^2.1.0",
     "material-ui": "^0.10.2",
     "react": "^0.13.3",
-    "redux": "^0.12.0"
+    "react-redux": "^0.2.2",
+    "react-router": "^1.0.0-beta2",
+    "redux": "^1.0.0-rc"
   },
   "devDependencies": {
     "babel-core": "^5.5.8",

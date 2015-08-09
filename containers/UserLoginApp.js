@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { connect } from 'redux/react';
-import AddressForm from '../components/AddressForm';
+import { connect } from 'react-redux';
+import UserLogin from '../components/UserLogin';
 import * as CounterActions from '../actions/CounterActions';
 
 @connect(state => ({
   counter: state.counter
 }))
-export default class AddressFormApp extends Component {
+export default class UserLoginApp extends Component {
   render() {
     const { counter, dispatch } = this.props;
     return (
-      <AddressForm counter={counter}
+      <UserLogin counter={counter}
                {...bindActionCreators(CounterActions, dispatch)} />
     );
   }
